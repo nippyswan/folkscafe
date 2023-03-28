@@ -1,0 +1,150 @@
+
+
+1. Add in payoff -> payoff should be less than balance
+2. Add in Cash OUT -> cash out "
+3. Add in Salary & Allowance -> salary & Allowance "
+4. Add in ingredients -> ingredients "
+5. Add in products -> products "
+6. change IP in sse.js
+
+
+
+TEST ALL
+
+
+
+
+
+
+
+Change customer's table no.
+change number in menu badge and permissions for chef
+add available qty in take order for products
+
+
+
+
+       <div class="tab-pane fade" id="{{$catg}}" role="tabpanel" aria-labelledby="{{$catg}}-tab">
+                <div class="row no-gutters">
+                
+                    @foreach($menulist as $ml)
+                        @if($ml->cname==$category[$i])
+                        <button class="col-lg-3 col-6 anoj" onclick="return addOrder('{{$ml->mname}}','{{$ml->sp}}','{{$ml->unit_name}}')" style="border-radius: 15%;">
+                        <div class="row no-gutters" style="border-radius: 15%;" >    
+                        <div class="col-12" >
+                            <div class="card m-0 p-0" style="border-radius: 15%;">
+                                <div class="card-body pt-2 pb-0" style="border-radius: 15%;background-color: #eedc82; border-style: solid;
+            border-color: #c1a878;">
+                                    
+                                    <div class="row no-gutters mb-1">
+                                        <div class="col-6" align="left">
+                                            <span class="badge badge-light" style="font-size: 16px; " id="{{$ml->mname}}c">x0</span>
+                                        </div>
+                                        <div class="col-6" align="right">
+                                            <a onclick="return remX('{{$ml->mname}}','{{$ml->sp}}','{{$ml->unit_name}}')" style="cursor: default;">
+                                                <img src="/png/remove.png" style="height: 25px; width: 25px;" class="img-fluid"  >
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="border-radius: 15%;">
+
+                                        <div class="col-12" style="background-color: #eee;border-radius: 10% 10% 0% 0%; position: relative; z-index: 1;overflow: auto;">
+
+                                            @if($ml->imgurl!=NULL)
+                                            @if($ml->type=="pd")
+                                            
+                                            <img src="/storage/products/{{$ml->imgurl}}" style=" height:120px; max-height: 120px; margin-left: auto; margin-right: auto; display: block;" class="img-fluid">
+                                            @else
+                                            <img src="/storage/menus/{{$ml->imgurl}}" style="height:120px; max-height: 120px; margin-left: auto; margin-right: auto; display: block;" class="img-fluid">
+                                            @endif
+                                            
+                                           
+                                            @else
+                                            <img src="/storage/ingredients/ig.jpg" style="height:120px; max-height: 120px; margin-left: auto; margin-right: auto; display: block;" class="img-fluid">
+                                            @endif
+                                            
+                                            
+                                        </div>
+                                        
+                                            
+                                      
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12" >
+                                            <b id="{{$ml->mname}}a">{{ucfirst($ml->mname)}}</b>
+                                           
+                                        </div>
+                                            
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-12" >
+                                            Rs. <span id="{{$ml->mname}}b">{{$ml->sp}}</span> per {{$ml->unit_name}}
+                                           
+                                        </div>
+                                            
+                                    </div> 
+                                    
+                                   
+                                                                     
+                                    
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </button>
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+openssl req ^
+ -new -sha256 -nodes ^
+ -out swan-pc.local.csr ^
+ -newkey rsa:2048 -keyout swan-pc.local.key ^
+ -config swan-pc.csr.cnf
+ -subj "/C=NP/ST=Koshi/L=Belbari/O=swan/OU=cafe/CN=swan-pc/emailAddress=nippyanoj@gmail.com/subjectAltName=IP:192.168.100.226"
+								
+
+
+openssl x509 -req -in swan-pc.local.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out swan-pc.local.crt -days 7000 -sha256 -extfile v3.ext
+
+ document.getElementById("mms1").src="";
+                        document.getElementById("mms1").src="https://192.168.100.226/audio/unconvinced.mp3";
+                        document.getElementById("mm").load();
+                        document.getElementById("mm").play();
+ 
+
+
+
